@@ -5,10 +5,10 @@
 # 1. Update the Salesforce CLI.
 # 2. Install code Analyzer 5 (beta)
 # 3. Install the Typescript NPM package globally.
-# 4. Remove the `df24-devtools-demo` folder (if it exists).
+# 4. Remove the `df24-devtools-demo-practice` folder (if it exists).
 # 5. Set the global Git config values for `user.name` and `user.email`
 #    This is a requirement for the Git extension for VS Code to work.
-# 6. Clone the `df24-devtools-demo` repository from GitHub.
+# 6. Clone the `df24-devtools-demo-practice` repository from GitHub.
 #
 # Exit on any error
 set -e
@@ -26,7 +26,7 @@ export SF_HIDE_RELEASE_NOTES_FOOTER=true
 # Handle script errors.
 function handle_error {
   echo
-  echo -e  "\u274C"" DF24 DevTools Demo: Code Builder Environment Setup Failed"
+  echo -e  "\u274C"" DF24 DevTools Demo Practice: Code Builder Environment Setup Failed"
   echo
 }
 
@@ -35,7 +35,7 @@ function handle_success {
   echo
   echo "───────────────────────────────────────────────────────────────────────"
   echo
-  echo -e "\u2705"" DF24 DevTools Demo: Code Builder Environment Setup Complete"
+  echo -e "\u2705"" DF24 DevTools Demo Practice: Code Builder Environment Setup Complete"
   echo
   echo "───────────────────────────────────────────────────────────────────────"
   echo
@@ -71,37 +71,37 @@ echo "(3) Installing Typescript"
 echo "───────────────────────────────────────────────────────────────────────"
 npm install -g typescript
 
-# Remove the df24-devtools-demo folder (if it exists).
+# Remove the df24-devtools-demo-practice folder (if it exists).
 echo
 echo "───────────────────────────────────────────────────────────────────────"
-echo "(4) Removing the df24-devtools-demo folder"
+echo "(4) Removing the df24-devtools-demo-practice folder"
 echo "───────────────────────────────────────────────────────────────────────"
-rm -rf /home/codebuilder/df24-devtools-demo
+rm -rf /home/codebuilder/df24-devtools-demo-practice
 echo
 echo "Folder removed"
 
-# Clone the df24-devtools-demo repository from GitHub.
+# Clone the df24-devtools-demo-practice repository from GitHub.
 echo
 echo "───────────────────────────────────────────────────────────────────────"
-echo "(5) Cloning the df24-devtools-demo repository"
+echo "(5) Cloning the df24-devtools-demo-practice repository"
 echo "───────────────────────────────────────────────────────────────────────"
-git clone https://github.com/VivekMChawla/df24-devtools-demo.git
+git clone https://github.com/DeveloperBenjamin/df24-devtools-demo-practice
 
 # Create the code-analyzer-logs folder inside the demo project.
 echo
 echo "───────────────────────────────────────────────────────────────────────"
 echo "(6) Creating the code-analyzer-logs folder inside the demo project."
 echo "───────────────────────────────────────────────────────────────────────"
-mkdir /home/codebuilder/df24-devtools-demo/code-analyzer-logs
+mkdir /home/codebuilder/df24-devtools-demo-practice/code-analyzer-logs
 echo
 echo "Folder created"
 
-# Install Node.js dependencies inside df24-devtools-demo.
+# Install Node.js dependencies inside df24-devtools-demo-practice.
 echo
 echo "───────────────────────────────────────────────────────────────────────"
-echo "(7) Installing Node.js dependencies inside df24-devtools-demo."
+echo "(7) Installing Node.js dependencies inside df24-devtools-demo-practice."
 echo "───────────────────────────────────────────────────────────────────────"
-npm install /home/codebuilder/df24-devtools-demo --prefix /home/codebuilder/df24-devtools-demo
+npm install /home/codebuilder/df24-devtools-demo-practice --prefix /home/codebuilder/df24-devtools-demo-practice
 
 # Create a .sf/config.json file to set the default org.
 echo
@@ -109,7 +109,7 @@ echo "────────────────────────�
 echo "(8) Creating a .sf/config.json file to set the default org."
 echo "───────────────────────────────────────────────────────────────────────"
 # Define the file path
-config_file="/home/codebuilder/df24-devtools-demo/.sf/config.json"
+config_file="/home/codebuilder/df24-devtools-demo-practice/.sf/config.json"
 # Create the directory if it doesn't exist
 mkdir -p "$(dirname "$config_file")"
 # Write the JSON content to the file
@@ -127,7 +127,7 @@ echo "────────────────────────�
 echo "(9) Creating a .sfdx/sfdx-config.json file to set the default org."
 echo "───────────────────────────────────────────────────────────────────────"
 # Define the file path
-config_file="/home/codebuilder/df24-devtools-demo/.sfdx/sfdx-config.json"
+config_file="/home/codebuilder/df24-devtools-demo-practice/.sfdx/sfdx-config.json"
 # Create the directory if it doesn't exist
 mkdir -p "$(dirname "$config_file")"
 # Write the JSON content to the file
