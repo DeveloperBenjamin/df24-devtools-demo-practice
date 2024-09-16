@@ -11,7 +11,7 @@ set -e
 
 branchName=WI-000002
 tagName=DemoStart
-demoDir=/home/codebuilder/df24-devtools-demo
+demoDir=/home/codebuilder/df24-devtools-demo-practice
 taskName="DF24 DevTools Demo Reset"
 
 # Ensure the script is being run from inside the demo directory.
