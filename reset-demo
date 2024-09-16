@@ -64,10 +64,10 @@ set +e
 # Push the new commit state to the remote repository.
 echo
 echo "───────────────────────────────────────────────────────────────────────"
-echo "(2) Pushing the new commit state to the remote repository."
+echo "(2) SKIPPED! Pushing the new commit state to the remote repository."
 echo "───────────────────────────────────────────────────────────────────────"
 echo
-git push origin $branchName --force
+#git push origin $branchName --force
 
 # Enable the ERR trap and disallow script errors.
 set -e
@@ -87,7 +87,7 @@ echo "────────────────────────�
 echo "(4) Deploying original versions of Apex classes."
 echo "───────────────────────────────────────────────────────────────────────"
 echo
-sf project deploy start --source-dir force-app/main/default/classes --ignore-conflicts --concise
+sf project deploy start --source-dir force-app/main/default/classes --ignore-conflicts --concise -o SandboxOrg
 
 # Script completed successfully.
 handle_success
